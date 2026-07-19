@@ -1,2 +1,430 @@
+<!DOCTYPE html>
 
-2222222222222
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Роутеры OWPN с OpenWrt, VPN, Wi‑Fi 6 и готовой настройкой." name="description"/>
+<title>OWPN — умные роутеры на OpenWrt</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Unbounded:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+<meta content="website" property="og:type"/><meta content="OWPN — умные роутеры на OpenWrt" property="og:title"/><meta content="Роутеры OWPN с OpenWrt, VPN, Wi‑Fi 6 и готовой настройкой." property="og:description"/><meta content="OWPN" property="og:site_name"/><link href="assets/img/favicon.svg" rel="icon" type="image/svg+xml"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое роутер OWPN?", "acceptedAnswer": {"@type": "Answer", "text": "Это роутер на базе OpenWrt с готовой настройкой, поддержкой VPN и удобным управлением сетью."}}, {"@type": "Question", "name": "Нужно ли самостоятельно устанавливать OpenWrt?", "acceptedAnswer": {"@type": "Answer", "text": "Нет. Роутер поставляется с уже установленной и подготовленной системой."}}, {"@type": "Question", "name": "Можно ли подключить OWPN после другого роутера?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Подключите кабель из LAN-порта основного роутера в WAN-порт роутера OWPN."}}, {"@type": "Question", "name": "Какие типы подключения поддерживаются?", "acceptedAnswer": {"@type": "Answer", "text": "В инструкции доступны DHCP и PPPoE. Раздел Static IP будет добавлен отдельно."}}, {"@type": "Question", "name": "Можно ли изменить имя и пароль Wi‑Fi?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Это делается через панель OpenWrt по адресу 192.168.3.1. Пошаговая инструкция размещена на странице Manual."}}, {"@type": "Question", "name": "Что делать, если интернет не появился?", "acceptedAnswer": {"@type": "Answer", "text": "Проверьте WAN-кабель, выбранный тип подключения и возможную привязку провайдера к MAC-адресу старого устройства."}}, {"@type": "Question", "name": "Поддерживаются ли сети 2,4 и 5 ГГц?", "acceptedAnswer": {"@type": "Answer", "text": "Да, если выбранная модель роутера поддерживает два диапазона Wi‑Fi."}}, {"@type": "Question", "name": "Где найти инструкцию по настройке?", "acceptedAnswer": {"@type": "Answer", "text": "Откройте страницу «Инструкция» в верхнем меню или перейдите на manual.html."}}]}</script>
+<style id="v24-section-alignment">
+  @media (min-width: 761px) {
+    #support,
+    #faq {
+      padding-left: clamp(42px, 5vw, 78px) !important;
+      padding-right: clamp(42px, 5vw, 78px) !important;
+      box-sizing: border-box !important;
+    }
+  }
+
+  @media (max-width: 760px) {
+    #support,
+    #faq {
+      padding-left: 22px !important;
+      padding-right: 22px !important;
+      box-sizing: border-box !important;
+    }
+  }
+</style>
+</head>
+<body>
+<header class="site-header">
+<a aria-label="OWPN" class="brand brand--text" href="#top">OWPN</a>
+<nav aria-label="Основная навигация" class="desktop-nav">
+<a class="nav-link" href="#routers">РОУТЕРЫ</a>
+<a class="nav-link" href="#benefits">ПРЕИМУЩЕСТВА</a>
+<a class="nav-link" href="#how">КАК ЭТО РАБОТАЕТ</a>
+<a class="nav-link" href="#support">ПОДДЕРЖКА</a>
+<a class="nav-link" href="manual.html">ИНСТРУКЦИЯ</a>
+</nav>
+<div class="header-actions">
+<button aria-label="Переключить тему" class="theme-toggle" type="button"><span>☀</span><span>◐</span></button>
+<a class="header-cta" href="#routers">Выбрать роутер <span>↗</span></a>
+<button aria-controls="site-mobile-menu" aria-expanded="false" aria-label="Открыть меню" class="menu-button" type="button"><span></span><span></span><span></span></button>
+</div>
+</header>
+<main id="top">
+<section class="hero section-shell">
+<div class="hero-copy">
+<div class="eyebrow"><span class="pulse"></span> OWPN / SMART NETWORK</div>
+<h1>Интернет,<br/>который <span>работает.</span></h1>
+<p class="hero-lead">Роутеры для дома, офиса и путешествий. OpenWrt, VPN, безопасный доступ и настройка за несколько минут.</p>
+<div class="hero-actions">
+<a class="button primary" href="#routers">Смотреть модели <span>↗</span></a>
+<button class="button ghost open-product" data-index="1">Открыть демо</button>
+</div>
+<div class="hero-metrics">
+<div><strong>24/7</strong><span>поддержка</span></div>
+<div><strong>5 мин</strong><span>до запуска</span></div>
+<div><strong>Wi‑Fi 6</strong><span>новый стандарт</span></div>
+</div>
+</div>
+<div class="hero-visual">
+<div class="visual-label">ROUTER / 01</div>
+<div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+<img alt="Роутер OWPN" src="assets/img/router-hero.png"/>
+<div class="floating-card card-speed"><b>1.8 Gbps</b><span>current throughput</span></div>
+<div class="floating-card card-status"><i></i><b>ONLINE</b><span>secure tunnel active</span></div>
+</div>
+<div class="scroll-note">SCROLL TO EXPLORE ↓</div>
+</section>
+<section aria-label="Технологии" class="trust-strip">
+<span>OPENWRT</span><span>WIREGUARD</span><span>VLESS</span><span>WI‑FI 6</span><span>24/7 SUPPORT</span><span>SECURE DNS</span>
+</section>
+<section class="problem section-pad" id="benefits">
+<div class="section-kicker">01 / ЗАЧЕМ OWPN</div>
+<div class="problem-grid">
+<div>
+<h2>Обычный роутер раздаёт Wi‑Fi.<br/><span>OWPN управляет интернетом.</span></h2>
+</div>
+<div class="problem-copy">
+<p>Мы объединили быстрый Wi‑Fi, приватность, обход ограничений и понятное управление в одном устройстве.</p>
+<a href="#how">Как устроена система <span>↗</span></a>
+</div>
+</div>
+<div class="stats-row">
+<article><b>01</b><strong>Безопасность</strong><p>Изолированные сети, VPN и защищённый DNS.</p></article>
+<article><b>02</b><strong>Скорость</strong><p>Оптимизация маршрутов и приоритет важных устройств.</p></article>
+<article><b>03</b><strong>Контроль</strong><p>Гибкие правила, профили и удалённое управление.</p></article>
+<article><b>04</b><strong>Простота</strong><p>Подключите питание — остальное уже настроено.</p></article>
+</div>
+</section>
+<section class="routers section-pad" id="routers">
+<div class="section-head">
+<div><div class="section-kicker">02 / МОДЕЛИ</div><h2>Выберите свой OWPN</h2></div>
+<p>Шесть моделей для дома, офиса, путешествий и сложных сетевых сценариев. Каждая готова к работе сразу после подключения.</p>
+</div>
+<div class="product-grid product-grid--six">
+<article class="product-card product-card--premium mesh">
+<div class="product-top"><span>HOME / 01</span><span class="product-status">ДЛЯ ДОМА</span></div>
+<div class="product-media"><img alt="XIAOMI AX3000T" src="assets/img/router-home.png"/></div>
+<div class="product-info"><h3><span class="card-title-brand">XIAOMI</span><span class="card-title-model">AX3000T</span></h3><p>Производительный Wi‑Fi 6 роутер для квартиры и дома. Подходит для потокового видео, игр, VPN и стабильной работы большого числа устройств.</p><div class="tags"><span>Wi‑Fi 6</span><span>AX3000</span><span>VPN</span></div></div>
+<div class="product-bottom"><strong>от 14 900 ₽</strong><button class="product-button open-product" data-index="0"><span class="product-button__label">Подробнее</span><span aria-hidden="true" class="product-button__icon">→</span></button></div>
+</article>
+<article class="product-card product-card--premium mesh">
+<div class="product-top"><span>PRO / 02</span><span class="product-status">ФЛАГМАН</span></div><div class="hot-label">BEST CHOICE</div>
+<div class="product-media"><img alt="CUDY WR3000S" src="assets/img/router-pro.png"/></div>
+<div class="product-info"><h3><span class="card-title-brand">CUDY</span><span class="card-title-model">WR3000S</span></h3><p>Универсальная модель с поддержкой Wi‑Fi 6 для домашней сети. Хороший баланс скорости, покрытия и работы с VPN-сценариями.</p><div class="tags"><span>Wi‑Fi 6</span><span>AX3000</span><span>Gigabit</span></div></div>
+<div class="product-bottom"><strong>от 15 900 ₽</strong><button class="product-button open-product" data-index="1"><span class="product-button__label">Подробнее</span><span aria-hidden="true" class="product-button__icon">→</span></button></div>
+</article>
+<article class="product-card product-card--premium mesh">
+<div class="product-top"><span>TRAVEL / 03</span><span class="product-status">ДЛЯ ПОЕЗДОК</span></div>
+<div class="product-media"><img alt="CUDY WR3000E" src="assets/img/router-travel.png"/></div>
+<div class="product-info"><h3><span class="card-title-brand">CUDY</span><span class="card-title-model">WR3000E</span></h3><p>Вторая конфигурация популярной модели для разных вариантов настройки OWPN. Подходит для квартиры, офиса и защищённого доступа в интернет.</p><div class="tags"><span>OpenWrt</span><span>VPN</span><span>WireGuard</span></div></div>
+<div class="product-bottom"><strong>от 16 900 ₽</strong><button class="product-button open-product" data-index="2"><span class="product-button__label">Подробнее</span><span aria-hidden="true" class="product-button__icon">→</span></button></div>
+</article>
+<article class="product-card product-card--premium mesh">
+<div class="product-top"><span>MINI / 04</span><span class="product-status">КОМПАКТНЫЙ</span></div>
+<div class="product-media"><img alt="CUDY WR3000H" src="assets/img/router-mini.png"/></div>
+<div class="product-info"><h3><span class="card-title-brand">CUDY</span><span class="card-title-model">WR3000H</span></h3><p>Мощный двухдиапазонный роутер для высокой нагрузки, стриминга и множества подключённых устройств с готовыми сетевыми сценариями.</p><div class="tags"><span>Wi‑Fi 6</span><span>2.5G</span><span>AX3000</span></div></div>
+<div class="product-bottom"><strong>от 17 900 ₽</strong><button class="product-button open-product" data-index="3"><span class="product-button__label">Подробнее</span><span aria-hidden="true" class="product-button__icon">→</span></button></div>
+</article>
+<article class="product-card product-card--premium mesh">
+<div class="product-top"><span>OFFICE / 05</span><span class="product-status">ДЛЯ БИЗНЕСА</span></div>
+<div class="product-media"><img alt="CUDY WBR3000UAX" src="assets/img/router-office.png"/></div>
+<div class="product-info"><h3><span class="card-title-brand">CUDY</span><span class="card-title-model">WBR3000UAX</span></h3><p>Гибкая модель для домашнего и мобильного использования с поддержкой современных стандартов связи и защищённой маршрутизации.</p><div class="tags"><span>Wi‑Fi 6</span><span>USB</span><span>VPN</span></div></div>
+<div class="product-bottom"><strong>от 19 900 ₽</strong><button class="product-button open-product" data-index="4"><span class="product-button__label">Подробнее</span><span aria-hidden="true" class="product-button__icon">→</span></button></div>
+</article>
+<article class="product-card product-card--premium mesh">
+<div class="product-top"><span>MESH / 06</span><span class="product-status">БОЛЬШОЙ ДОМ</span></div>
+<div class="product-media"><img alt="NETIS NX31" src="assets/img/router-mesh.png"/></div>
+<div class="product-info"><h3><span class="card-title-brand">NETIS</span><span class="card-title-model">NX31</span></h3><p>Современный гигабитный роутер для стабильного покрытия дома или небольшого офиса. Оптимален для ежедневной нагрузки и VPN.</p><div class="tags"><span>Wi‑Fi 6</span><span>Gigabit</span><span>Mesh</span></div></div>
+<div class="product-bottom"><strong>от 13 900 ₽</strong><button class="product-button open-product" data-index="5"><span class="product-button__label">Подробнее</span><span aria-hidden="true" class="product-button__icon">→</span></button></div>
+</article>
+</div>
+</section>
+<section class="experience section-pad" id="how">
+<div class="experience-visual">
+<img alt="Компактный роутер OWPN" src="assets/img/router-story.png"/>
+<div class="signal-lines"></div>
+<span class="visual-caption">SYSTEM STATUS / ACTIVE</span>
+</div>
+<div class="experience-copy">
+<div class="section-kicker">03 / КАК ЭТО РАБОТАЕТ</div>
+<h2>Интернет, который просто работает.</h2>
+<div class="steps">
+<div><span>01</span><div><h3>Подключите</h3><p>Питание и кабель провайдера — больше ничего.</p></div></div>
+<div><span>02</span><div><h3>Выберите режим</h3><p>Обычный интернет, VPN для всех или отдельные правила.</p></div></div>
+<div><span>03</span><div><h3>Пользуйтесь</h3><p>Система сама следит за доступностью и выбирает рабочий маршрут.</p></div></div>
+</div>
+</div>
+</section>
+<section class="feature-marquee"><div>FAST / SECURE / OPEN / SMART / FAST / SECURE / OPEN / SMART /</div></section>
+<section class="support section-pad support--v22" id="support">
+<div class="support-main">
+<div class="section-kicker">04 / ПОДДЕРЖКА</div>
+<h2>Мы рядом.<br/>Даже после покупки.</h2>
+<p>Поможем с подключением, настройкой и нестандартными сценариями.</p>
+<a class="button light" href="https://t.me/astcoltd">Написать в Telegram <span>↗</span></a>
+</div>
+<div class="support-cards">
+<article><span>01</span><h3>Удалённая настройка</h3><p>Подключимся и всё проверим вместе с вами.</p></article>
+<article><span>02</span><h3>Обновления</h3><p>Новые функции и улучшения безопасности.</p></article>
+<article><span>03</span><h3>База знаний</h3><p>Понятные инструкции без сложной терминологии.</p></article>
+</div>
+</section>
+<section class="faq section-pad" id="faq">
+<div class="section-head faq__head">
+<div>
+<div class="section-kicker">05 / FAQ</div>
+<h2>Вопросы и ответы</h2>
+</div>
+<p>Коротко отвечаем на вопросы о подключении, настройке и работе роутеров OWPN.</p>
+</div>
+<div class="faq__list">
+<article class="faq__item">
+<button aria-controls="faq-answer-1" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Что такое роутер OWPN?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-1">
+<p>Это роутер на базе OpenWrt с готовой настройкой, поддержкой VPN и удобным управлением сетью.</p>
+</div>
+</article>
+<article class="faq__item">
+<button aria-controls="faq-answer-2" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Нужно ли самостоятельно устанавливать OpenWrt?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-2">
+<p>Нет. Роутер поставляется с уже установленной и подготовленной системой.</p>
+</div>
+</article>
+<article class="faq__item">
+<button aria-controls="faq-answer-3" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Можно ли подключить OWPN после другого роутера?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-3">
+<p>Да. Подключите кабель из LAN-порта основного роутера в WAN-порт роутера OWPN.</p>
+</div>
+</article>
+<article class="faq__item">
+<button aria-controls="faq-answer-4" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Какие типы подключения поддерживаются?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-4">
+<p>В инструкции доступны DHCP и PPPoE. Раздел Static IP будет добавлен отдельно.</p>
+</div>
+</article>
+<article class="faq__item">
+<button aria-controls="faq-answer-5" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Можно ли изменить имя и пароль Wi‑Fi?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-5">
+<p>Да. Это делается через панель OpenWrt по адресу 192.168.3.1. Пошаговая инструкция размещена на странице Manual.</p>
+</div>
+</article>
+<article class="faq__item">
+<button aria-controls="faq-answer-6" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Что делать, если интернет не появился?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-6">
+<p>Проверьте WAN-кабель, выбранный тип подключения и возможную привязку провайдера к MAC-адресу старого устройства.</p>
+</div>
+</article>
+<article class="faq__item">
+<button aria-controls="faq-answer-7" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Поддерживаются ли сети 2,4 и 5 ГГц?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-7">
+<p>Да, если выбранная модель роутера поддерживает два диапазона Wi‑Fi.</p>
+</div>
+</article>
+<article class="faq__item">
+<button aria-controls="faq-answer-8" aria-expanded="false" class="faq__question" data-faq-toggle="" type="button">
+<span>Где найти инструкцию по настройке?</span><i aria-hidden="true">+</i>
+</button>
+<div class="faq__answer" hidden="" id="faq-answer-8">
+<p>Откройте страницу «Инструкция» в верхнем меню или перейдите на manual.html.</p>
+</div>
+</article>
+</div>
+</section><section class="final-cta final-cta--v22">
+<div class="final-cta__content">
+<div class="section-kicker">READY TO CONNECT?</div>
+<h2>Выберите роутер,<br/>который подходит вам.</h2>
+<p>Сравните модели по скорости, покрытию и сценарию использования — для дома, офиса или поездок.</p>
+</div>
+<a class="final-cta__button-v22" href="#routers">
+<span>Смотреть модели</span>
+<i aria-hidden="true">↗</i>
+</a>
+</section>
+</main>
+<footer class="site-footer">
+<a aria-label="OWPN — главная" class="site-footer__brand" href="index.html">OWPN</a>
+<nav aria-label="Навигация в подвале" class="site-footer__nav">
+<a href="index.html#routers">РОУТЕРЫ</a>
+<a href="index.html#benefits">ПРЕИМУЩЕСТВА</a>
+<a href="index.html#support">ПОДДЕРЖКА</a>
+<a href="index.html#faq">ВОПРОСЫ И ОТВЕТЫ</a>
+<a href="manual.html">ИНСТРУКЦИЯ</a>
+</nav>
+<div class="site-footer__contacts">
+<a href="https://t.me/astcoltd" rel="noopener" target="_blank">Telegram</a>
+<a aria-label="OWPN во ВКонтакте" href="#">VK</a>
+<a href="mailto:info@owpn.org">Email</a>
+</div>
+<p class="site-footer__copyright">© 2026 OWPN. SMART NETWORK SYSTEMS.</p>
+</footer>
+<div aria-hidden="true" class="mobile-panel" id="site-mobile-menu"><a href="#routers"><span class="mobile-menu-index">01</span><span class="mobile-menu-label">РОУТЕРЫ</span><span aria-hidden="true" class="mobile-menu-arrow">↗</span></a><a href="#benefits"><span class="mobile-menu-index">02</span><span class="mobile-menu-label">ПРЕИМУЩЕСТВА</span><span aria-hidden="true" class="mobile-menu-arrow">↗</span></a><a href="#how"><span class="mobile-menu-index">03</span><span class="mobile-menu-label">КАК ЭТО РАБОТАЕТ</span><span aria-hidden="true" class="mobile-menu-arrow">↗</span></a><a href="#support"><span class="mobile-menu-index">04</span><span class="mobile-menu-label">ПОДДЕРЖКА</span><span aria-hidden="true" class="mobile-menu-arrow">↗</span></a>
+<a href="manual.html"><span class="mobile-menu-index">05</span><span class="mobile-menu-label">ИНСТРУКЦИЯ</span><span aria-hidden="true" class="mobile-menu-arrow">↗</span></a>
+</div>
+<div aria-hidden="true" class="product-modal">
+<div class="modal-backdrop"></div>
+<div aria-labelledby="modalTitle" aria-modal="true" class="modal-shell" role="dialog">
+<button aria-label="Закрыть" class="modal-close">×</button>
+<div class="modal-counter"><span id="modalCurrent">01</span> / 06</div>
+<div class="modal-stage">
+<div class="modal-left">
+<div class="modal-slider-rail">
+<button aria-label="Предыдущая модель" class="slide-arrow prev">↑</button>
+<div class="modal-thumbs" id="modalThumbs"></div>
+<button aria-label="Следующая модель" class="slide-arrow next">↓</button>
+</div>
+<img alt="" id="modalImage" src="assets/img/router-home.png"/>
+</div>
+<div class="modal-info" data-model="">
+<div class="modal-code" id="modalCode">HOME / 01</div>
+<h2 id="modalTitle"><span class="modal-title-brand">XIAOMI</span><span class="modal-title-model">AX3000T</span></h2>
+<p id="modalText">Стабильный интернет для квартиры и дома.</p>
+<div class="modal-tags" id="modalTags"></div>
+<div class="modal-specs" id="modalSpecs"></div>
+<div class="modal-buy">
+<div class="modal-price-row"><span>СТОИМОСТЬ</span><strong id="modalPrice">от 14 900 ₽</strong></div>
+<div class="modal-order-row"><a class="button primary" href="https://t.me/astcoltd">Заказать <span>↗</span></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="theme.js"></script>
+<script src="script.js"></script>
+<button aria-label="Наверх" class="back-to-top" type="button">↑</button>
+<script id="v26-mobile-menu-controller">
+(() => {
+  const button = document.querySelector('.menu-button');
+  const panel = document.querySelector('.mobile-panel');
+  const themeButtons = [...document.querySelectorAll('.theme-toggle')];
+
+  if (!button || !panel) return;
+
+  const setOpen = (open) => {
+    panel.classList.toggle('is-open', open);
+    panel.classList.toggle('open', open);
+    button.classList.toggle('is-active', open);
+    button.setAttribute('aria-expanded', String(open));
+    button.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+    panel.setAttribute('aria-hidden', String(!open));
+    document.documentElement.classList.toggle('site-menu-open', open);
+    document.body.classList.toggle('site-menu-open', open);
+  };
+
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setOpen(!panel.classList.contains('is-open'));
+  });
+
+  panel.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setOpen(false));
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setOpen(false);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1180) setOpen(false);
+  });
+
+  const applyTheme = (dark) => {
+    document.body.classList.toggle('dark', dark);
+    localStorage.setItem('owpn-theme', dark ? 'dark' : 'light');
+  };
+
+  applyTheme(localStorage.getItem('owpn-theme') === 'dark');
+
+  themeButtons.forEach((themeButton) => {
+    themeButton.addEventListener('click', () => {
+      applyTheme(!document.body.classList.contains('dark'));
+    });
+  });
+})();
+</script><script id="v28-faq-controller">
+(() => {
+  const buttons = [...document.querySelectorAll('.faq__question[data-faq-toggle]')];
+  if (!buttons.length) return;
+
+  const closeItem = (button) => {
+    const item = button.closest('.faq__item');
+    const answer = item?.querySelector('.faq__answer');
+    button.setAttribute('aria-expanded', 'false');
+    item?.classList.remove('is-open');
+    if (answer) answer.hidden = true;
+  };
+
+  const openItem = (button) => {
+    const item = button.closest('.faq__item');
+    const answer = item?.querySelector('.faq__answer');
+    button.setAttribute('aria-expanded', 'true');
+    item?.classList.add('is-open');
+    if (answer) answer.hidden = false;
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const shouldOpen = button.getAttribute('aria-expanded') !== 'true';
+      buttons.forEach(closeItem);
+      if (shouldOpen) openItem(button);
+    });
+  });
+})();
+</script><script id="v28-fixed-header-scroll">
+(() => {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  let scheduled = false;
+
+  const updateHeader = () => {
+    scheduled = false;
+
+    const mobileMenuOpen =
+      document.documentElement.classList.contains('site-menu-open') ||
+      document.body.classList.contains('site-menu-open') ||
+      document.querySelector('.mobile-panel')?.classList.contains('is-open') ||
+      document.querySelector('.mobile-panel')?.classList.contains('open');
+
+    const productModalOpen =
+      document.querySelector('.product-modal')?.classList.contains('open');
+
+    header.classList.toggle(
+      'is-mobile-scroll-hidden',
+      window.innerWidth <= 1180 &&
+      window.scrollY > 24 &&
+      !mobileMenuOpen &&
+      !productModalOpen
+    );
+  };
+
+  window.addEventListener('scroll', () => {
+    if (scheduled) return;
+    scheduled = true;
+    requestAnimationFrame(updateHeader);
+  }, { passive: true });
+
+  window.addEventListener('resize', updateHeader);
+  document.querySelector('.menu-button')?.addEventListener('click', () => {
+    requestAnimationFrame(updateHeader);
+  });
+
+  updateHeader();
+})();
+</script></body>
+</html>
